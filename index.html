@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta property="og:title" content="記憶配對" />
+	<meta property="og:description" content="先將所有的牌面朝下，可以翻開任何的牌，並找到另一張一樣的牌，二張一樣的牌為一組才算配對成功，如果沒有獲得配對，就把牌蓋回去，要用腦子去記住每張被翻過的卡牌分別是什麼圖案。" />
+	<meta property="og:locale" content="zh_TW" />
+	<meta property="og:type" content="website" />
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Noto+Serif+TC&display=swap">
+    <link rel="stylesheet" href="css/memory-match.css">
+    <title>記憶配對</title>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>記憶配對</h1>
+        </header>
+
+        <section class="score-panel">
+        	<ul class="stars">
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        	</ul>
+
+        	<span class="moves">0</span> 翻牌次數
+
+            <div class="timer">
+            </div>
+
+            <div class="restart" onclick=startGame()>
+        		<i class="fad fa-repeat"></i>
+        	</div>
+        </section>
+
+        <ul class="deck" id="card-deck">
+            <li class="card" type="basketball-ball">
+                <i class="fas fa-basketball-ball"></i>
+            </li>
+            <li class="card" type="globe-asia">
+                <i class="fas fa-globe-asia"></i>
+            </li>
+            <li class="card" type="keyboard">
+                <i class="fas fa-keyboard"></i>
+            </li>
+            <li class="card" type="person-booth" >
+                <i class="fas fa-person-booth"></i>
+            </li>
+            <li class="card" type="ship">
+                <i class="fas fa-ship"></i>
+            </li>
+            <li class="card" type="keyboard">
+                <i class="fas fa-keyboard"></i>
+            </li>
+            <li class="card" type="canadian-maple-leaf">
+                <i class="fab fa-canadian-maple-leaf"></i>
+            </li>
+            <li class="card" type="shopping-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </li>
+            <li class="card" type="basketball-ball">
+                <i class="fas fa-basketball-ball"></i>
+            </li>
+            <li class="card" type="biohazard">
+                <i class="fas fa-biohazard"></i>
+            </li>
+            <li class="card" type="canadian-maple-leaf">
+                <i class="fab fa-canadian-maple-leaf"></i>
+            </li>
+            <li class="card" type="biohazard">
+                <i class="fas fa-biohazard"></i>
+            </li>
+            <li class="card" type="person-booth">
+                <i class="fas fa-person-booth"></i>
+            </li>
+            <li class="card" type="shopping-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </li>
+            <li class="card" type="globe-asia">
+                <i class="fas fa-globe-asia"></i>
+            </li>
+            <li class="card" type="ship">
+                <i class="fas fa-ship"></i>
+            </li>
+        </ul>
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>恭喜 🎉</h2>
+                <a class="close" href=# >×</a>
+                <div class="content-1">
+                    恭喜您贏了 🎉🎉
+                </div>
+                <div class="content-2">
+                    <p>您總共<span id=finalMove> </span>翻牌</p>
+                    <p><span id=totalTime> </span>次</p>
+                    <p>星等評級：<span id=starRating></span></p>
+                </div>
+                <button id="play-again"onclick="playAgain()">
+                    再玩一次 😄</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/memory-match.js"></script>
+</body>
+</html>
